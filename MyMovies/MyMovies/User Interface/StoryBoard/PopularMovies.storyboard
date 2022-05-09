@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tQ8-gh-PDq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="m2r-IG-zGO">
+            <objects>
+                <navigationController id="tQ8-gh-PDq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="pencil" catalog="system" id="GUb-2B-lkx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qoO-eR-Cj4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="5Fv-eS-iXK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="3ch-Me-GHj" kind="relationship" relationship="rootViewController" id="fHA-ia-OI2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPn-bg-Vnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="499" y="889"/>
+        </scene>
+        <!--Popular-->
+        <scene sceneID="Kv9-a8-sgU">
+            <objects>
+                <viewController id="3ch-Me-GHj" customClass="PopularMoviesViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1zc-zb-aov">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="sch-OQ-SrK">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-St-pW1">
+                                    <rect key="frame" x="16" y="15.5" width="180.5" height="31.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="x7c-St-pW1" firstAttribute="centerY" secondItem="sch-OQ-SrK" secondAttribute="centerY" id="ol8-zL-SI5"/>
+                                <constraint firstItem="x7c-St-pW1" firstAttribute="leading" secondItem="sch-OQ-SrK" secondAttribute="leading" constant="16" id="wem-j8-zJ3"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="88" id="pot-Kx-R7L" customClass="MovieTableViewCell" customModule="MyMovies" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="106.5" width="414" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pot-Kx-R7L" id="I5b-uE-9ND">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED8-jk-6W3">
+                                            <rect key="frame" x="20" y="16" width="374" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiP-AY-wTF">
+                                            <rect key="frame" x="25" y="45" width="369" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ED8-jk-6W3" secondAttribute="trailing" id="70M-Cg-WW2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QiP-AY-wTF" secondAttribute="trailing" id="EUd-ZF-YQ3"/>
+                                        <constraint firstItem="ED8-jk-6W3" firstAttribute="leading" secondItem="I5b-uE-9ND" secondAttribute="leadingMargin" id="FN9-Th-pfe"/>
+                                        <constraint firstItem="QiP-AY-wTF" firstAttribute="leading" secondItem="I5b-uE-9ND" secondAttribute="leadingMargin" constant="5" id="GJe-Ba-NZp"/>
+                                        <constraint firstItem="ED8-jk-6W3" firstAttribute="top" secondItem="I5b-uE-9ND" secondAttribute="topMargin" constant="5" id="f91-rO-iTd"/>
+                                        <constraint firstItem="QiP-AY-wTF" firstAttribute="top" secondItem="ED8-jk-6W3" secondAttribute="bottom" constant="8" symbolic="YES" id="hKT-mX-A6S"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QiP-AY-wTF" secondAttribute="bottom" id="vsF-eO-aok"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieDescriptionLabel" destination="QiP-AY-wTF" id="jvq-O7-QR0"/>
+                                    <outlet property="movieitleLabel" destination="ED8-jk-6W3" id="Xyq-jq-T4R"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Popular" id="Byu-zy-hhb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcR-Ky-Sv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="889"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
