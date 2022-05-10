@@ -9,51 +9,34 @@ import Foundation
 
 class MoviesServiceHandler {
     
-    /// Singleton Instance
     static public let shared = MoviesServiceHandler()
- 
-    var request : NSMutableURLRequest = NSMutableURLRequest()
-    let session = URLSession.shared
     
+    /// This function will call AIP endpoint with the path provided and will return the data recived.
+    ///
+    /// - Parameters: path from the endpoint
+    ///
+    func getImage(path: String, completion: @escaping (Data?) -> Void) {
+            
+        let group = DispatchGroup()
+        group.enter()
+            
+        if let url = URL(string: path) {
+                
+            DispatchQueue.global(qos: .utility).async {
+                let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                    guard let data = data, error == nil else { return }
+
+                    DispatchQueue.main.async { /// execute on main thread since is for user interface
+                        completion(data)
+                    }
+                }
+                task.resume()
+                group.leave()
+                
+            }
+        }
+    
+        group.wait()
+    }
 }
 
-extension URLSession {
-    
-    enum CustomError : Error {
-        case invalidUrl
-        case invalidData
-    }
-    
-    func request<T: Codable>(url: URL?, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-        
-        guard let url = url else {
-            completion(.failure(CustomError.invalidUrl))
-            return
-        }
-        
-        let task = self.dataTask(with: url) { data, _, error in
-            
-            guard let data = data else {
-                if let error = error {
-                    completion(.failure(error))
-                } else {
-                    completion(.failure(CustomError.invalidData))
-                }
-                return
-                
-            }
-            
-            do {
-                let result = try JSONDecoder().decode(expecting, from: data)
-                completion(.success(result))
-                
-            } catch {
-                completion(.failure(error))
-                
-            }
-        
-        }
-        
-        task.resume()
-    }
-}

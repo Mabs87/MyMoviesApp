@@ -7,11 +7,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Upcoming-->
         <scene sceneID="Q0K-B3-4zD">
             <objects>
                 <navigationController id="DJS-6y-711" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="paperplane" catalog="system" id="rbm-SS-fTN"/>
+                    <tabBarItem key="tabBarItem" title="Upcoming" image="clock.arrow.2.circlepath" catalog="system" id="rbm-SS-fTN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qfv-HO-IET">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,29 +24,39 @@
             </objects>
             <point key="canvasLocation" x="-868" y="118"/>
         </scene>
-        <!--Upcoming-->
+        <!--Upcoming Movies View Controller-->
         <scene sceneID="Dnh-Fi-YSe">
             <objects>
                 <viewController id="IzW-uT-jpN" customClass="UpcomingMoviesViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="E5f-nE-rtO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="eLf-id-URB">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeP-KG-eRz">
-                                    <rect key="frame" x="16" y="15.5" width="211.5" height="31.5"/>
+                                    <rect key="frame" x="16" y="5" width="211.5" height="31.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming films and latest anuncements." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAr-vn-OKn">
+                                    <rect key="frame" x="16" y="37.5" width="382" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                             <constraints>
-                                <constraint firstItem="aeP-KG-eRz" firstAttribute="centerY" secondItem="eLf-id-URB" secondAttribute="centerY" id="i4W-Xp-laa"/>
+                                <constraint firstItem="aeP-KG-eRz" firstAttribute="top" secondItem="eLf-id-URB" secondAttribute="top" constant="5" id="FCF-KG-8mf"/>
+                                <constraint firstAttribute="trailing" secondItem="cAr-vn-OKn" secondAttribute="trailing" constant="16" id="INg-NI-D1c"/>
+                                <constraint firstItem="cAr-vn-OKn" firstAttribute="top" secondItem="aeP-KG-eRz" secondAttribute="bottom" constant="1" id="J8o-tl-lyJ"/>
+                                <constraint firstItem="cAr-vn-OKn" firstAttribute="leading" secondItem="eLf-id-URB" secondAttribute="leading" constant="16" id="PNQ-QT-CnM"/>
                                 <constraint firstItem="aeP-KG-eRz" firstAttribute="leading" secondItem="eLf-id-URB" secondAttribute="leading" constant="16" id="uJg-by-yfA"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cAr-vn-OKn" secondAttribute="bottom" constant="5" id="zcN-UM-inK"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -70,6 +80,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="6J2-Ee-bRb" firstAttribute="top" secondItem="9Pu-RD-XSI" secondAttribute="bottom" constant="8" symbolic="YES" id="10B-Fo-9eo"/>
                                         <constraint firstItem="9Pu-RD-XSI" firstAttribute="leading" secondItem="8OP-xr-TGf" secondAttribute="leadingMargin" id="AJV-Dx-vX7"/>
@@ -87,17 +98,20 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Upcoming" id="cRk-gL-NOZ"/>
+                    <navigationItem key="navigationItem" id="cRk-gL-NOZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QV1-77-eh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="118"/>
+            <point key="canvasLocation" x="79.710144927536234" y="117.85714285714285"/>
         </scene>
     </scenes>
     <resources>
-        <image name="paperplane" catalog="system" width="128" height="118"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="clock.arrow.2.circlepath" catalog="system" width="128" height="103"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -7,11 +7,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Popular-->
         <scene sceneID="m2r-IG-zGO">
             <objects>
                 <navigationController id="tQ8-gh-PDq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="pencil" catalog="system" id="GUb-2B-lkx"/>
+                    <tabBarItem key="tabBarItem" title="Popular" image="flame" catalog="system" id="GUb-2B-lkx">
+                        <color key="badgeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qoO-eR-Cj4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,29 +29,39 @@
             </objects>
             <point key="canvasLocation" x="499" y="889"/>
         </scene>
-        <!--Popular-->
+        <!--Popular Movies View Controller-->
         <scene sceneID="Kv9-a8-sgU">
             <objects>
                 <viewController id="3ch-Me-GHj" customClass="PopularMoviesViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1zc-zb-aov">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1zc-zb-aov">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="sch-OQ-SrK">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-St-pW1">
-                                    <rect key="frame" x="16" y="15.5" width="180.5" height="31.5"/>
+                                    <rect key="frame" x="16" y="5" width="180.5" height="31.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of most popular movies." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSt-Xp-lQv">
+                                    <rect key="frame" x="16" y="37.5" width="382" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="x7c-St-pW1" firstAttribute="centerY" secondItem="sch-OQ-SrK" secondAttribute="centerY" id="ol8-zL-SI5"/>
+                                <constraint firstItem="x7c-St-pW1" firstAttribute="top" secondItem="sch-OQ-SrK" secondAttribute="top" constant="5" id="2m1-Gq-RIT"/>
+                                <constraint firstAttribute="trailing" secondItem="gSt-Xp-lQv" secondAttribute="trailing" constant="16" id="6mM-1p-C7z"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gSt-Xp-lQv" secondAttribute="bottom" constant="5" id="Jwx-aq-xsf"/>
+                                <constraint firstItem="gSt-Xp-lQv" firstAttribute="top" secondItem="x7c-St-pW1" secondAttribute="bottom" constant="1" id="ruD-sn-iI9"/>
                                 <constraint firstItem="x7c-St-pW1" firstAttribute="leading" secondItem="sch-OQ-SrK" secondAttribute="leading" constant="16" id="wem-j8-zJ3"/>
+                                <constraint firstItem="gSt-Xp-lQv" firstAttribute="leading" secondItem="sch-OQ-SrK" secondAttribute="leading" constant="16" id="xlO-6m-4KV"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -73,6 +85,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="ED8-jk-6W3" secondAttribute="trailing" id="70M-Cg-WW2"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="QiP-AY-wTF" secondAttribute="trailing" id="EUd-ZF-YQ3"/>
@@ -90,7 +103,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Popular" id="Byu-zy-hhb"/>
+                    <navigationItem key="navigationItem" id="Byu-zy-hhb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcR-Ky-Sv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,9 +111,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil" catalog="system" width="128" height="113"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="flame" catalog="system" width="108" height="128"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
